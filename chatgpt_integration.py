@@ -12,9 +12,9 @@ def chatgpt_prompt(prompt):
             {"role": "user", "content": prompt},
         ],
     )
-
-    assistant_message = [msg for msg in response['choices'][0]['messages'] if msg['role'] == 'assistant']
-    return assistant_message[0]['content']
+    return (response['choices'][0]['message']['content'].strip())
+    #assistant_message = [msg for msg in response['choices'][0]['messages'] if msg['role'] == 'assistant']
+    #return assistant_message[0]['content']
 
 # Example: Get a code suggestion from ChatGPT
 code_suggestion_prompt = "Write a Python function to calculate the factorial of a number using recursion."
