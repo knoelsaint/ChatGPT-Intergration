@@ -3,8 +3,7 @@ import os
 
 # Initialize the OpenAI API
 openai.api_key = os.getenv('OPENAI_KEY')
-print("hello Max")
-print(openai.api_key)
+
 def chatgpt_prompt(prompt):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
